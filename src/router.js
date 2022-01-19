@@ -112,7 +112,7 @@ const routes = [
         component: StatusPage,
     },
     {
-        path: "/status",
+        path: "/",
         component: StatusPage,
     },
 ];

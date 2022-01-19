@@ -201,7 +201,7 @@ exports.entryPage = "dashboard";
     // Entry Page
     app.get("/", async (_request, response) => {
         if (exports.entryPage === "statusPage") {
-            response.redirect("/status");
+            response.redirect("/");
         } else {
             response.redirect("/dashboard");
         }

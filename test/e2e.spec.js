@@ -169,7 +169,7 @@ describe("Init", () => {
             await newPage.goto(baseURL);
             await newPage.waitForSelector("img.logo", { timeout: 3000 });
             pathname = await newPage.evaluate(() => location.pathname);
-            expect(pathname).toEqual("/status");
+            expect(pathname).toEqual("/");
 
             // Back to Dashboard
             await click(page, "#entryPageYes");
@@ -277,7 +277,7 @@ describe("Init", () => {
     describe("Status Page", () => {
         const title = "Uptime Kuma";
         beforeAll(async () => {
-            await page.goto(baseURL + "/status");
+            await page.goto(baseURL + "/");
         });
         it(`should be titled "${title}"`, async () => {
             await expect(page.title()).resolves.toEqual(title);
