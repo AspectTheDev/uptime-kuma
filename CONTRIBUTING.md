@@ -79,7 +79,7 @@ I personally do not like something need to learn so much and need to config so m
 - 4 spaces indentation
 - Follow `.editorconfig`
 - Follow ESLint
-- Methods and functions should be documented with JSDoc
+- Methods and funtions should be documented with JSDoc
 
 ## Name convention
 
@@ -90,10 +90,9 @@ I personally do not like something need to learn so much and need to config so m
 ## Tools
 
 - Node.js >= 14
-- NPM >= 8.5
 - Git
 - IDE that supports ESLint and EditorConfig (I am using IntelliJ IDEA)
-- A SQLite GUI tool (SQLite Expert Personal is suggested)
+- A SQLite tool (SQLite Expert Personal is suggested)
 
 ## Install dependencies
 
@@ -101,45 +100,39 @@ I personally do not like something need to learn so much and need to config so m
 npm ci
 ```
 
-## Dev Server
+## How to start the Backend Dev Server
 
-(2022-04-26 Update)
-
-We can start the frontend dev server and the backend dev server in one command.
-
-Port `3000` and port `2008` will be used.
+(2021-09-23 Update)
 
 ```bash
-npm run dev
+npm run start-server-dev
 ```
 
-## Backend Server
+It binds to `0.0.0.0:3001` by default.
 
-For development, it binds to `0.0.0.0:2008` by default.
-For production, it binds to  `0.0.0.0:3000` by default.
+### Backend Details
 
 It is mainly a socket.io app + express.js.
 
-express.js is used for: 
-- entry point such as redirecting to a status page or the dashboard
-- serving the frontend built files (index.html, .js and .css etc.)
-- serving internal APIs of status page
-
-
-### Structure in /server/
+express.js is just used for serving the frontend built files (index.html, .js and .css etc.)
 
 - model/ (Object model, auto mapping to the database table name)
 - modules/ (Modified 3rd-party modules)
 - notification-providers/ (individual notification logic)
 - routers/ (Express Routers)
 - socket-handler (Socket.io Handlers)
-- server.js (Server entry point and main logic)
+- server.js (Server main logic)
 
-## Frontend Dev Server
+## How to start the Frontend Dev Server
 
-It binds to `0.0.0.0:3000` by default. Frontend dev server is used for development only. 
+1. Set the env var `NODE_ENV` to "development".
+2. Start the frontend dev server by the following command.
 
-For production, it is not used. It will be compiled to `dist` directory instead. 
+   ```bash
+   npm run dev
+   ```
+
+   It binds to `0.0.0.0:3000` by default.
 
 You can use Vue.js devtools Chrome extension for debugging.
 
