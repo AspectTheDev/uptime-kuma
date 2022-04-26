@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 const { Page, Browser } = require("puppeteer");
 const { sleep } = require("../src/util");
-const axios = require("axios");
 
 /**
  * Set back the correct data type for page object
@@ -169,7 +168,7 @@ describe("Init", () => {
             await newPage.goto(baseURL);
             await newPage.waitForSelector("img.logo", { timeout: 3000 });
             pathname = await newPage.evaluate(() => location.pathname);
-            expect(pathname).toEqual("/");
+            expect(pathname).toEqual("/status");
 
             // Back to Dashboard
             await click(page, "#entryPageYes");
@@ -277,7 +276,7 @@ describe("Init", () => {
     describe("Status Page", () => {
         const title = "Uptime Kuma";
         beforeAll(async () => {
-            await page.goto(baseURL + "/");
+            await page.goto(baseURL + "/status");
         });
         it(`should be titled "${title}"`, async () => {
             await expect(page.title()).resolves.toEqual(title);
