@@ -10,5 +10,5 @@ services:
     volumes:
       - ./uptime-kuma:/app/data
     ports:
-      - 3001:3001
+      - 2008:2008
     restart: always

@@ -75,7 +75,7 @@ export function setPageLocale() {
 export function getResBaseURL() {
     const env = process.env.NODE_ENV;
     if (env === "development" || localStorage.dev === "dev") {
-        return location.protocol + "//" + location.hostname + ":3001";
+        return location.protocol + "//" + location.hostname + ":2008";
     } else {
         return "";
     }

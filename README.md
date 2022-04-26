@@ -40,12 +40,12 @@ VPS is sponsored by Uptime Kuma sponsors on [Open Collective](https://opencollec
 ### 🐳 Docker
 
 ```bash
-docker run -d --restart=always -p 3001:3001 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:1
+docker run -d --restart=always -p 2008:2008 -v uptime-kuma:/app/data --name uptime-kuma louislam/uptime-kuma:1
 ```
 
 ⚠️ Please use a **local volume** only. Other types such as NFS are not supported.
 
-Browse to http://localhost:3001 after starting.
+Browse to http://localhost:2008 after starting.
 
 ### 💪🏻 Non-Docker
 
@@ -74,7 +74,7 @@ pm2 start server/server.js --name uptime-kuma
 
 
 ```
-Browse to http://localhost:3001 after starting.
+Browse to http://localhost:2008 after starting.
 
 More useful PM2 Commands
 
