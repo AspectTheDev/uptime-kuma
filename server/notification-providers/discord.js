@@ -39,27 +39,27 @@ class Discord extends NotificationProvider {
                 let discorddowndata = {
                     username: discordDisplayName,
                     embeds: [{
-                        title: "❌ Your service " + monitorJSON["name"] + " went down. ❌",
+                        title: monitorJSON["name"] + " went down. ❌",
                         color: 16711680,
                         timestamp: heartbeatJSON["time"],
-                        fields: [
-                            {
-                                name: "Service Name",
-                                value: monitorJSON["name"],
-                            },
-                            {
-                                name: "Service URL",
-                                value: url,
-                            },
-                            {
-                                name: "Time (UTC)",
-                                value: heartbeatJSON["time"],
-                            },
-                            {
-                                name: "Error",
-                                value: heartbeatJSON["msg"],
-                            },
-                        ],
+                        // fields: [
+                        //     {
+                        //         name: "Service Name",
+                        //         value: monitorJSON["name"],
+                        //     },
+                        //     {
+                        //         name: "Service URL",
+                        //         value: url,
+                        //     },
+                        //     {
+                        //         name: "Time (UTC)",
+                        //         value: heartbeatJSON["time"],
+                        //     },
+                        //     {
+                        //         name: "Error",
+                        //         value: heartbeatJSON["msg"],
+                        //     },
+                        // ],
                     }],
                 };
 
@@ -74,22 +74,22 @@ class Discord extends NotificationProvider {
                 let discordupdata = {
                     username: discordDisplayName,
                     embeds: [{
-                        title: "✅ Your service " + monitorJSON["name"] + " is up! ✅",
+                        title: monitorJSON["name"] + " is up! ✅",
                         color: 65280,
                         timestamp: heartbeatJSON["time"],
                         fields: [
-                            {
-                                name: "Service Name",
-                                value: monitorJSON["name"],
-                            },
-                            {
-                                name: "Service URL",
-                                value: url.startsWith("http") ? "[Visit Service](" + url + ")" : url,
-                            },
-                            {
-                                name: "Time (UTC)",
-                                value: heartbeatJSON["time"],
-                            },
+                            // {
+                            //     name: "Service Name",
+                            //     value: monitorJSON["name"],
+                            // },
+                            // {
+                            //     name: "Service URL",
+                            //     value: url.startsWith("http") ? "[Visit Service](" + url + ")" : url,
+                            // },
+                            // {
+                            //     name: "Time (UTC)",
+                            //     value: heartbeatJSON["time"],
+                            // },
                             {
                                 name: "Ping",
                                 value: heartbeatJSON["ping"] + "ms",
